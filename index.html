@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Player</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="dark">
+  <!-- Sidebar Playlist -->
+  <div class="sidebar">
+    <h2>Playlist</h2>
+    <ul>
+      <li data-src="Songs/Ed Sheeran - Shape of You (Lyrics)(MP3_160K)(MP3_160K).mp3">🎵 Shape of You</li>
+      <li data-src="Songs/JJD - Adventure [NCS Release](MP3_160K)(MP3_160K).mp3">🎵 JJD - Adventure</li>
+      <li data-src="Songs/Tokyo Drift - Teriyaki Boyz [ MUSIC VIDEO ] HD(MP3_160K).mp3">🎵 Tokyo Drift</li>
+      <li data-src="Songs/Neffex - Best of Me (Lyrics)(MP3_160K)(MP3_160K).mp3">🎵 Best of Me</li>
+      <li data-src="Songs/NEFFEX - Grateful [Copyright Free](MP3_160K)(MP3_160K).mp3">🎵 Grateful</li>
+    </ul>
+  </div>
+
+  <div class="mainDiv">
+
+    <!-- Music Title -->
+    <div class="musicPlayerTitle">
+      <h1>Music Player</h1>
+    </div>
+
+    <!-- Music Thumbnail -->
+    <div class="musicImageDiv">
+      <img class="musicImage" src="thumbnail.jpg" alt="Music1">
+    </div>
+
+    <!-- Audio element (hidden, no controls) -->
+    <audio id="audioPlayer" src="Songs/Ed Sheeran - Shape of You (Lyrics)(MP3_160K)(MP3_160K).mp3"></audio>
+
+    <!-- Custom Controls -->
+    <div class="controls">
+      <button id="prevBtn">⏮️</button>
+      <button id="playBtn">▶️</button>
+      <button id="pauseBtn">⏸️</button>
+      <button id="nextBtn">⏭️</button>
+    </div>
+  </div>
+</body>
+</html>

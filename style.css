@@ -1,0 +1,274 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  margin: 0;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ---------- DARK THEME ---------- */
+body.dark {
+  background: linear-gradient(135deg, #1db954, #121212);
+  color: white;
+}
+
+body.dark .sidebar {
+  background: #181818;
+  color: #fff;
+}
+
+body.dark .sidebar h2 {
+  color: #1db954;
+}
+
+body.dark .sidebar ul li {
+  background: #282828;
+}
+
+body.dark .sidebar ul li.active {
+  background: #1db954;
+  color: white;
+}
+
+body.dark .mainDiv {
+  background: #222;
+  color: white;
+}
+
+body.dark .musicPlayerTitle h1 {
+  color: #1db954;
+}
+
+body.dark .musicImage {
+  border: 5px solid #1db954;
+  box-shadow: 0 0 15px rgba(29,185,84,0.5);
+}
+
+body.dark .controls button {
+  background: linear-gradient(135deg, #1db954, #1ed760);
+}
+
+body.dark #progressBar {
+  background: #444;
+}
+
+body.dark #progressBar::-webkit-slider-thumb,
+body.dark #progressBar::-moz-range-thumb {
+  background: #1db954;
+}
+
+/* ---------- LIGHT THEME ---------- */
+body.light {
+  background: linear-gradient(135deg, #e3f2fd, #ffffff);
+  color: #333;
+}
+
+body.light .sidebar {
+  background: #f5f5f5;
+  color: #333;
+}
+
+body.light .sidebar h2 {
+  color: #1976d2;
+}
+
+body.light .sidebar ul li {
+  background: #e0e0e0;
+}
+
+body.light .sidebar ul li.active {
+  background: #1976d2;
+  color: white;
+}
+
+body.light .mainDiv {
+  background: #ffffff;
+  color: #333;
+}
+
+body.light .musicPlayerTitle h1 {
+  color: #1976d2;
+}
+
+body.light .musicImage {
+  border: 5px solid #1976d2;
+  box-shadow: 0 0 15px rgba(25,118,210,0.4);
+}
+
+body.light .controls button {
+  background: linear-gradient(135deg, #42a5f5, #1976d2);
+}
+
+body.light #progressBar {
+  background: #ddd;
+}
+
+body.light #progressBar::-webkit-slider-thumb,
+body.light #progressBar::-moz-range-thumb {
+  background: #1976d2;
+}
+
+/* ---------- SHARED STYLES ---------- */
+.sidebar {
+  width: 220px;
+  height: 100%;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+}
+
+.sidebar h2 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+  color: inherit;
+}
+
+.sidebar ul li:hover {
+  opacity: 0.8;
+}
+
+.mainDiv {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  margin: auto;
+  padding: 2%;
+  border-radius: 20px;
+}
+
+.musicPlayerTitle h1 {
+  margin-bottom: 15px;
+}
+
+.musicImageDiv {
+  display: flex;
+  justify-content: center;
+  aspect-ratio: 1/1;
+  width: 45%;
+}
+
+.musicImage {
+  border-radius: 50%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.controls {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.controls button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+}
+
+.controls button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+
+.controls button:active {
+  transform: scale(0.95);
+}
+
+.progress-container {
+  width: 80%;
+  margin-top: 15px;
+}
+
+#progressBar {
+  width: 100%;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 5px;
+  outline: none;
+  background: #444;
+}
+
+#progressBar::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 5px;
+}
+
+#progressBar::-moz-range-track {
+  height: 6px;
+  border-radius: 5px;
+}
+
+#progressBar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -4.5px;
+}
+
+#progressBar::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.time-display {
+  margin-top: 8px;
+  font-size: 14px;
+  font-family: monospace;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.theme-toggle button {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.2s, background 0.3s;
+}
+
+.theme-toggle button:hover {
+  transform: scale(1.1);
+}
