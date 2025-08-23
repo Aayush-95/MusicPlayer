@@ -272,3 +272,12 @@ body.light #progressBar::-moz-range-thumb {
 .theme-toggle button:hover {
   transform: scale(1.1);
 }
+
+.musicImage.playing {
+  animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
