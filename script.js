@@ -6,6 +6,9 @@ const nextBtn = document.getElementById("nextBtn");
 const musicImage = document.querySelector(".musicImage");
 const playlistItems = document.querySelectorAll(".sidebar ul li");
 const body = document.body;
+const progressBar = document.getElementById("progressBar");
+const currentTimeEl = document.getElementById("currentTime");
+const durationEl = document.getElementById("duration");
 
 let currentSongIndex = 0;
 
@@ -52,3 +55,30 @@ function playSong(index) {
 
   currentSongIndex = index;
 }
+
+// Update progress bar while playing
+audio.addEventListener("timeupdate", () => {
+  progressBar.max = audio.duration;
+  progressBar.value = audio.currentTime;
+
+  currentTimeEl.textContent = formatTime(audio.currentTime);
+  durationEl.textContent = formatTime(audio.duration);
+});
+
+// Seek
+progressBar.addEventListener("input", () => {
+  audio.currentTime = progressBar.value;
+});
+
+function formatTime(time) {
+  if (isNaN(time)) return "0:00";
+  let minutes = Math.floor(time / 60);
+  let seconds = Math.floor(time % 60);
+  if (seconds < 10) seconds = "0" + seconds;
+  return `${minutes}:${seconds}`;
+}
+
+audio.addEventListener("ended", () => {
+  currentSongIndex = (currentSongIndex + 1) % playlistItems.length;
+  playSong(currentSongIndex);
+});
